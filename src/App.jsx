@@ -6,19 +6,19 @@ const dataUser = [
     id: 1,
     nama: "Dwi Fauzul Ahmad",
     email: "fauzultanjung05@gmail.com",
-    noHp: "082246480985"
+    noHp: "082246480985",
   },
   {
     id: 2,
     nama: "Anwar Juniansyah",
     email: "Anwarjuni@gmail.com",
-    noHp: "082248520785"
+    noHp: "082248520785",
   },
   {
     id: 3,
     nama: "Fazri Khairan Masdi",
     email: "fazrikhairan@gmail.com",
-    noHp: "085246483355"
+    noHp: "085246483355",
   },
 ];
 
@@ -41,18 +41,16 @@ function App() {
 
   return (
     <>
-      {
-        detail && (
-          <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div  className="m-auto flex flex-col bg-slate-300 p-5 gap-5 rounded-lg">
-              <h1>Nama : {detail.nama}</h1>
-              <h1>Email : {detail.email}</h1>
-              <h1>No Hp : {detail.noHp}</h1>
-              <button onClick={()=> setDetail()}>close</button>
-            </div>
+      {detail && (
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
+          <div className="m-auto flex flex-col bg-slate-300 p-5 gap-5 rounded-lg">
+            <h1>Nama : {detail.nama}</h1>
+            <h1>Email : {detail.email}</h1>
+            <h1>No Hp : {detail.noHp}</h1>
+            <button onClick={() => setDetail()}>close</button>
           </div>
-        )
-      }
+        </div>
+      )}
       {editUser && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
           <div className="m-auto flex flex-col bg-slate-300 p-5 gap-5 rounded-lg">
@@ -102,7 +100,7 @@ function App() {
                 } else {
                   setUser([
                     ...user,
-                    { id: user[user.length-1].id + 1, ...editUser }
+                    { id: user[user.length - 1].id + 1, ...editUser },
                   ]);
                 }
                 setEditUser();
@@ -110,7 +108,10 @@ function App() {
             >
               Tambah
             </button>
-            <button className="bg-blue-500 rounded-lg hover:bg-blue-700" onClick={()=> setEditUser()}>
+            <button
+              className="bg-blue-500 rounded-lg hover:bg-blue-700"
+              onClick={() => setEditUser()}
+            >
               Batalkan
             </button>
           </div>
@@ -152,7 +153,10 @@ function App() {
                   >
                     Delete
                   </button>
-                  <button className="bg-blue-500 text-white px-4 py-1 rounded ml-2 hover:bg-blue-700 mx-4" onClick={() => setDetail(u)}>
+                  <button
+                    className="bg-blue-500 text-white px-4 py-1 rounded ml-2 hover:bg-blue-700 mx-4"
+                    onClick={() => setDetail(u)}
+                  >
                     Detail
                   </button>
                 </td>
